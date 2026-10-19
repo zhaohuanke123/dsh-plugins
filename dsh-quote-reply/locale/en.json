@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Quote and Reply",
+    "description": "Select a passage of Agent output in the conversation, quote it into the composer, and write a reply about it."
+  }
+}

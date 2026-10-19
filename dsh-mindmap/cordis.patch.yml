@@ -1,0 +1,6 @@
+- insert:
+    - id: mindmap
+      name: '@local/dsh-mindmap'
+      config:
+        prompt: true
+        maxNodes: 40

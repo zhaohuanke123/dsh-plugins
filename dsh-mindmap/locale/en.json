@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Conversation Mind Map",
+    "description": "Shows the current conversation as a mind map of topics, decisions, todos, and open questions in the right sidebar, updated as the session progresses."
+  }
+}

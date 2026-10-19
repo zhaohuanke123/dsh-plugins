@@ -24,16 +24,16 @@ ls ~/.dsh/profiles/          # Windows: C:\Users\<你>\.dsh\profiles\
 
 ### 方式一：从本仓库装（推荐，多台机器）
 
-在 DSH 里对 Agent 说：
+在 DSH 里对 Agent 说（`<profile>` 换成目标 profile，本机是 `desktop`）：
 
-> 用 `plugin_manager` 的 `install_bundle`，把
-> `git+https://github.com/zhaohuanke123/dsh-plugins.git#v1.0.0`
-> 装到 `<profile>` profile。
-> 另一个包在同一个仓库里，是 monorepo 子目录 —— 按 DSH 需要的形式指过去。
+> 用 `plugin_manager` 的 `install_bundle` 装两个 bundle：
+> - `git+https://github.com/zhaohuanke123/dsh-plugins.git#v1.0.0&path:/dsh-mindmap`
+> - `git+https://github.com/zhaohuanke123/dsh-plugins.git#v1.0.0&path:/dsh-quote-reply`
 
-`install_bundle` 的 `target` 支持：**npm 包名 / git URL / tarball URL / 本地绝对目录**（DSH 文档原文：*"Retry with an npm package name, a git URL, a tarball URL, or an absolute local directory."*）。
+**这两个 spec 已实测**（pnpm v10.33.3 真跑 `pnpm add`，两个包都成功解析并保留 `dsh.bundle` 字段）。
+`install_bundle` 的 `target` 支持 **npm 包名 / git URL / tarball URL / 本地绝对目录**（DSH 文档原文：*"Retry with an npm package name, a git URL, a tarball URL, or an absolute local directory."*），git URL 会转给 pnpm，而 `#<ref>&path:/<子目录>` 是 pnpm 官方的 monorepo 子目录写法。
 
-> ⚠️ 私有仓库：这台机器要有可用的 git 凭证（`gh auth login` 或 token 进 git 配置）。
+公开仓库，不需要凭证。**用 `#v1.0.0` 这种 tag 别用分支名**——分支会漂移，tag 不会。
 
 ### 方式二：从本地目录装
 

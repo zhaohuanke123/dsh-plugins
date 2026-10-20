@@ -1,6 +1,6 @@
 # dsh-plugins
 
-两个 **DSH（DeepSeek Harness）桌面端 GUI 插件**，自用定制件（私有）。
+两个 **DSH（DeepSeek Harness）桌面端 GUI 插件**，自用定制件（公开仓库）。
 
 | 插件 | 包名 | 做什么 |
 |---|---|---|
@@ -40,6 +40,8 @@ ls ~/.dsh/profiles/          # Windows: C:\Users\<你>\.dsh\profiles\
 把 `dsh-mindmap/`、`dsh-quote-reply/` 放到一个**不会被清理的稳定位置**（例如 `C:\Users\<你>\dsh-plugins\`），然后：
 
 > 用 `plugin_manager` 的 `install_bundle`，把 `C:\Users\<你>\dsh-plugins\dsh-mindmap` 装到 `<profile>`；`dsh-quote-reply` 同样。
+
+本机（开发机）就是这种方式：仓库放在 vault 的 `projects/dsh-plugins/`，desktop profile 的两个 `@local/*` 依赖用 `link:` 指向里面的 `dsh-mindmap`、`dsh-quote-reply` 子目录——**运行的就是这份源码**；vault 用 `.gitignore` 排除该目录，版本管理只看本仓库的 `.git`，两边不再各留一份可编辑副本。
 
 看到 `application: applied` 且**无 warning** 即成功，然后重启 DSH（或刷新页面）。
 

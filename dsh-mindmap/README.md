@@ -16,7 +16,7 @@
 - 子 agent 会话同样拿到这个工具（全局注册），图各自存在各自会话的日志里；
 - 不走 Web 的 CLI 会话也会带上这个工具，只是没有右侧栏可看，无副作用。
 
-换 profile 或换机器要各自装一次：把 `projects/dsh-mindmap` 目录带过去，再 `plugin_manager install_bundle` 指向该目录（装的是 Junction 链接，源码始终在自己手里）。
+换 profile 或换机器要各自装一次：把本仓库的 `dsh-mindmap/` 目录带过去，再 `plugin_manager install_bundle` 指向该目录（装的是 Junction 链接，源码始终在自己手里）。
 
 ## 数据流
 
